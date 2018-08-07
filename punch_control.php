@@ -10,7 +10,7 @@ if (!$dbh) {
 }
 
 // execute query
-$sql = "SELECT punch_control.user_id,punch.original_time_stamp,punch.status_id FROM punch_control LEFT JOIN punch ON punch_control.id = punch.punch_control_id";
+$sql = "SELECT * FROM punch_control LEFT JOIN punch ON punch_control.id = punch.punch_control_id";
 $result = pg_query($dbh, $sql);
 if (!$result) {
     die("Error in SQL query: " . pg_last_error());
